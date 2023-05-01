@@ -1,0 +1,33 @@
+.suspended-list {
+  margin: 24px;
+}
+
+.suspended-list label {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #212121;
+}
+
+.suspended-list select {
+  padding-left: 24px;
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+
+  font-size: 16px;
+
+  background-color: #ffff;
+
+  border-color: none;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+  border: none;
+}
+
+.suspended-list select > option {
+  margin-bottom: 8px;
+  font-size: 24px;
+}
