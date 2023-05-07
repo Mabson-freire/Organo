@@ -1,9 +1,11 @@
+import { MdDeleteForever } from 'react-icons/md';
 import './Collaborator.css'
 
 const Collaborator = (props) => {
 
   return (
     <div className='collaborator'>
+      <MdDeleteForever size={25} className='deletar' onClick={props.aoDeletar}/>
       <div className='header'style={{backgroundColor:props.cor}}>
         <img src={props.imagem} alt={props.nome}/>
       </div>

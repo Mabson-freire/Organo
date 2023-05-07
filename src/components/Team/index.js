@@ -13,13 +13,15 @@ const Team = (props) => {
       <h3 style={{borderColor: props.corPrincipal}}>{props.nome}</h3>
 
       <div className='collaborators'>
-        {props.collaborators.map(collaborator => <Collaborator 
-        key={collaborator.nome}
-        nome={collaborator.nome}
-        cargo={collaborator.cargo}
-        imagem={collaborator.imagem}
-        cor={props.corPrincipal}
-        />)}
+        {props.collaborators.map((collaborator, indice) => {
+        return <Collaborator 
+          key={indice}
+          nome={collaborator.nome}
+          cargo={collaborator.cargo}
+          imagem={collaborator.imagem}
+          cor={props.corPrincipal}
+          aoDeletar={props.aoDeletar}
+        />})}
       </div>
     </section>
     :'' //caso não for maior que zero, retornará uma string vazia

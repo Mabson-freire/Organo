@@ -45,25 +45,94 @@ function App() {
    },
    
   ]
-  const [collaborators, setCollaborators] = useState([]) 
+  const [ collaborators, setCollaborators] = useState([
+    { nome:'Mabim Jumentim',
+      cargo: 'Jumento de carga',
+      admissão: '25/02/2023',
+      imagem: 'http://github.com/mabson-freire.png',
+      time: 'Programação'
+    },
+    { nome:'Mabim Jumentim',
+      cargo: 'Jumento de carga',
+      admissão: '25/02/2023',
+      imagem: 'http://github.com/mabson-freire.png',
+      time: 'Programação'
+    },
+    { nome:'Mabim Jumentim',
+      cargo: 'Jumento de carga',
+      admissão: '25/02/2023',
+      imagem: 'http://github.com/mabson-freire.png',
+      time: 'Programação'
+    },
+    { nome: 'Mabim bunitin',
+      admissão: '25/02/2023',
+      imagem: 'http://github.com/mabson-freire.png',
+      time: 'Programação'
+    },
+    { nome:'mabson',
+      cargo: 'Jumento de carga',
+      admissão: '25/02/2023',
+      imagem: 'http://github.com/mabson-freire.png',
+      time: 'Front End'
+    },
+    { nome:'mabson gostosão',
+      cargo: 'Jumento de carga',
+      admissão: '25/02/2023',
+      imagem: 'http://github.com/mabson-freire.png',
+      time: 'Front End'
+    },
+    { nome:'mabson bunitão',
+      cargo: 'Jumento de carga',
+      admissão: '25/02/2023',
+      imagem: 'http://github.com/mabson-freire.png',
+      time: 'Devops'
+    },
+    { nome:'mabson lustroso',
+      cargo: 'Jumento de carga',
+      admissão: '25/02/2023',
+      imagem: 'http://github.com/mabson-freire.png',
+      time: 'Devops'
+    },
+    { nome:'mabson inteligente',
+      cargo: 'Jumento de carga',
+      admissão: '25/02/2023',
+      imagem: 'http://github.com/mabson-freire.png',
+      time: 'Data Science'
+    },
+    {
+      nome:'mabson inteligente',
+      cargo: 'Jumento de carga',
+      admissão: '25/02/2023',
+      imagem: 'http://github.com/mabson-freire.png',
+      time: 'Data Science'
+    }
+  ]) 
 
   const toNewCollaboratorAdded = (collaborator) => {
     setCollaborators([...collaborators, collaborator])
   }
 
+  function removeCollaborator() {
+    console.log('colaborador deletado')
+  }
+
   return (
     <div className="App">
       <Banner/>
-      <Form namesOfTeams={teams.map(team => team.nome)} toCollaboratorCadastred={collaborator => toNewCollaboratorAdded(collaborator)}/>
-      
-      {teams.map(team => <Team 
-        key={team.nome} 
-        nome={team.nome} 
-        corPrincipal={team.corPrincipal} 
-        corSecundaria={team.corSecundaria}
-        collaborators={collaborators.filter(collaborator => collaborator.time === team.nome)}
-      />)}
-
+      <Form 
+        namesOfTeams={teams.map(team => team.nome)} 
+        toCollaboratorCadastred={collaborator => toNewCollaboratorAdded(collaborator)}
+      />
+      {teams.map((team, indice) => 
+        <Team 
+          key={indice} 
+          nome={team.nome} 
+          corPrincipal={team.corPrincipal} 
+          corSecundaria={team.corSecundaria}
+          collaborators={collaborators.filter(collaborator => collaborator.time === team.nome)}
+          aoDeletar={removeCollaborator}
+        />
+      )}
       <Footer/>
     </div>
   );
